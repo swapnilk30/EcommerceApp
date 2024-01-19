@@ -1,5 +1,7 @@
 package com.ecommerce.controller.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +19,12 @@ public class UserControllerImpl implements UserController {
 	public UserDto createUser(UserDto userDto) {
 		UserDto createUser = userService.createUser(userDto);
 		return createUser;
+	}
+
+	@Override
+	public List<UserDto> getAllUser() {
+		List<UserDto> allUserDtoList = userService.getAllUser();
+		return allUserDtoList;
 	}
 
 }

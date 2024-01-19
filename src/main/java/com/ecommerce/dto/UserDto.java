@@ -1,5 +1,7 @@
 package com.ecommerce.dto;
 
+import java.util.List;
+
 public class UserDto {
 
 	private String userId; 
