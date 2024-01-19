@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.ecommerce.dto.UserDto;
 import com.ecommerce.entity.User;
+import com.ecommerce.exception.ResourceNotFoundException;
 import com.ecommerce.repository.UserRepository;
 import com.ecommerce.service.UserService;
 
@@ -64,7 +65,7 @@ public class UserServiceImpl implements UserService {
 		for (User user : userList) {
 
 			UserDto userDto = new UserDto();
-			
+
 			userDto.setUserId(user.getUserId());
 			userDto.setName(user.getName());
 			userDto.setEmail(user.getEmail());
@@ -74,6 +75,14 @@ public class UserServiceImpl implements UserService {
 		}
 
 		return dtoList;
+	}
+
+	@Override
+	public UserDto getUserById(String userId) {
+	//	User user = userRepository.findById(userId).get();
+		User user = userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User not found by Given Id !!"));
+		UserDto userDto = entityToDto(user);
+		return userDto;
 	}
 
 }

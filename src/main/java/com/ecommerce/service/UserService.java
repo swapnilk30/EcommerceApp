@@ -12,4 +12,7 @@ public interface UserService {
 	
 	//get All User
 	List<UserDto> getAllUser();
+	
+	// get User by Id
+	UserDto getUserById(String userId);
 }

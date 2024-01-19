@@ -3,6 +3,8 @@ package com.ecommerce.controller.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.controller.UserController;
@@ -25,6 +27,12 @@ public class UserControllerImpl implements UserController {
 	public List<UserDto> getAllUser() {
 		List<UserDto> allUserDtoList = userService.getAllUser();
 		return allUserDtoList;
+	}
+
+	@Override
+	public ResponseEntity<UserDto> getUserById(String userId) {
+		UserDto userDto1=userService.getUserById(userId);
+		return new ResponseEntity<>(userDto1,HttpStatus.OK);
 	}
 
 }
