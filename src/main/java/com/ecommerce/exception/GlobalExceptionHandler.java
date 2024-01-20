@@ -9,13 +9,13 @@ import com.ecommerce.dto.ApiResponseMessege;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-	
-	
-	//HandleResourceNotFoundException
+
+	// HandleResourceNotFoundException
 	@ExceptionHandler(ResourceNotFoundException.class)
-	public ResponseEntity<ApiResponseMessege> ResourceNotFoundExceptionHandler(ResourceNotFoundException ex){
-		ApiResponseMessege responseMessege=new ApiResponseMessege(ex.getMessage(),HttpStatus.NOT_FOUND);
-		return new ResponseEntity<>(responseMessege,HttpStatus.NOT_FOUND);
-	
+	public ResponseEntity<ApiResponseMessege> ResourceNotFoundExceptionHandler(ResourceNotFoundException ex) {
+		ApiResponseMessege responseMessege = new ApiResponseMessege(ex.getMessage(), HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(responseMessege, HttpStatus.NOT_FOUND);
+
 	}
+
 }
