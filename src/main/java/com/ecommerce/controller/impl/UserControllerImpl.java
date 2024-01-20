@@ -2,6 +2,8 @@ package com.ecommerce.controller.impl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,8 @@ import com.ecommerce.service.UserService;
 @RestController
 public class UserControllerImpl implements UserController {
 
+	//import from org.slf4j
+	private static final Logger log=LoggerFactory.getLogger(UserControllerImpl.class);
 	
 	@Autowired
 	private UserService userService;
@@ -32,6 +36,7 @@ public class UserControllerImpl implements UserController {
 
 	@Override
 	public ResponseEntity<UserDto> getUserById(String userId) {
+		log.info("start: UserControllerImpl ---> getUserById id is {}",userId);
 		UserDto userDto1=userService.getUserById(userId);
 		return new ResponseEntity<>(userDto1,HttpStatus.OK);
 	}

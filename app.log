@@ -1,0 +1,31 @@
+2024-01-20 18:52:59.416  INFO 13368 --- [main] com.ecommerce.EcommerceAppApplication    : Starting EcommerceAppApplication using Java 17.0.7 on SwapnilK with PID 13368 (C:\Users\Swapnil.SWAPNILK\Desktop\GITHUB\EcommerceApp\target\classes started by Swapnil in C:\Users\Swapnil.SWAPNILK\Desktop\GITHUB\EcommerceApp)
+2024-01-20 18:52:59.419  INFO 13368 --- [main] com.ecommerce.EcommerceAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-01-20 18:53:00.143  INFO 13368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-20 18:53:00.191  INFO 13368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interfaces.
+2024-01-20 18:53:00.646  INFO 13368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2024-01-20 18:53:00.654  INFO 13368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-20 18:53:00.655  INFO 13368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2024-01-20 18:53:00.775  INFO 13368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-20 18:53:00.775  INFO 13368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1303 ms
+2024-01-20 18:53:00.931  INFO 13368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-20 18:53:00.974  INFO 13368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-01-20 18:53:01.133  INFO 13368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-01-20 18:53:01.227  INFO 13368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-20 18:53:01.541  INFO 13368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-20 18:53:01.560  INFO 13368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-01-20 18:53:02.106  INFO 13368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-20 18:53:02.114  INFO 13368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-20 18:53:02.515  WARN 13368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-20 18:53:02.850  INFO 13368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2024-01-20 18:53:03.021  INFO 13368 --- [main] com.ecommerce.EcommerceAppApplication    : Started EcommerceAppApplication in 3.953 seconds (JVM running for 4.628)
+2024-01-20 18:53:53.965  INFO 13368 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-20 18:53:53.965  INFO 13368 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-20 18:53:53.966  INFO 13368 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-01-20 18:53:53.993  INFO 13368 --- [http-nio-8085-exec-1] c.e.controller.impl.UserControllerImpl   : start: UserControllerImpl ---> getUserById id is 559d0e8e-4333-498f-99bb-384b2a14f
+2024-01-20 18:53:54.027 ERROR 13368 --- [http-nio-8085-exec-1] c.e.exception.ResourceNotFoundException  : Resouce not found Exception!!
+2024-01-20 18:55:25.892  INFO 13368 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-01-20 18:55:25.905  INFO 13368 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-20 18:55:25.906  INFO 13368 --- [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-01-20 18:55:25.914  INFO 13368 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-20 18:55:25.916  INFO 13368 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-20 18:55:25.925  INFO 13368 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
