@@ -11,7 +11,6 @@ public class ApiResponseMessege {
 	}
 	
 	public ApiResponseMessege(String messege, HttpStatus status) {
-		super();
 		this.messege = messege;
 		Status = status;
 	}

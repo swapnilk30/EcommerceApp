@@ -93,4 +93,27 @@ public class UserServiceImpl implements UserService {
 		userRepository.delete(user);
 	}
 
+	@Override
+	public UserDto updateUser(String userId, UserDto userDto) {
+		// Get user by Id
+		User user = userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User not found by Given Id !!"));
+		//update user
+		user.setName(userDto.getName());
+		user.setEmail(userDto.getEmail());
+		user.setPassword(userDto.getPassword());
+		//save user to Database
+		User updatedUser=userRepository.save(user);
+		UserDto updatedDto = entityToDto(updatedUser);
+		return updatedDto;
+	}
+
+	@Override
+	public UserDto updatePasswordById(String userId, String password) {
+		User user = userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User not found by Given Id !!"));
+		//Update password Only
+		user.setPassword(password);
+		User passwordChange = userRepository.save(user);
+		return entityToDto(passwordChange);
+	}
+
 }

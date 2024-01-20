@@ -18,4 +18,13 @@ public interface UserService {
 	
 	//delete by id
 	void deleteUserById(String userId);
+	
+	//Update User By Id
+	
+	UserDto updateUser(String userId,UserDto userDto);
+	
+	// Update User Password By Id
+	
+	UserDto updatePasswordById(String userId,String password);
+	
 }

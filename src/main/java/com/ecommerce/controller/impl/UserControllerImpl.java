@@ -43,4 +43,16 @@ public class UserControllerImpl implements UserController {
 		return ResponseEntity.ok(responseMessege);
 	}
 
+	@Override
+	public ResponseEntity<UserDto> updateUser(String userId, UserDto userDto) {
+		UserDto updateUser = userService.updateUser(userId, userDto);
+		return ResponseEntity.ok(updateUser);
+	}
+
+	@Override
+	public ResponseEntity<UserDto> changePassword(String userId, String password) {
+		UserDto updatePasswordById = userService.updatePasswordById(userId, password);
+		return ResponseEntity.ok(updatePasswordById);
+	}
+
 }
