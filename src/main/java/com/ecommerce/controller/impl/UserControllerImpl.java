@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.controller.UserController;
+import com.ecommerce.dto.ApiResponseMessege;
 import com.ecommerce.dto.UserDto;
 import com.ecommerce.service.UserService;
 @RestController
@@ -33,6 +34,13 @@ public class UserControllerImpl implements UserController {
 	public ResponseEntity<UserDto> getUserById(String userId) {
 		UserDto userDto1=userService.getUserById(userId);
 		return new ResponseEntity<>(userDto1,HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<ApiResponseMessege> deleteUserById(String userId) {
+		userService.deleteUserById(userId);
+		ApiResponseMessege responseMessege = new ApiResponseMessege("User is Deleted Successfully !!",HttpStatus.OK);
+		return ResponseEntity.ok(responseMessege);
 	}
 
 }

@@ -15,4 +15,7 @@ public interface UserService {
 	
 	// get User by Id
 	UserDto getUserById(String userId);
+	
+	//delete by id
+	void deleteUserById(String userId);
 }
