@@ -39,6 +39,7 @@ public class UserServiceImpl implements UserService {
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
 		user.setPassword(userDto.getPassword());
+		user.setImageName(userDto.getImageName());
 		return user;
 
 	}
@@ -50,6 +51,7 @@ public class UserServiceImpl implements UserService {
 		userDto.setName(savedUser.getName());
 		userDto.setEmail(savedUser.getEmail());
 		userDto.setPassword(savedUser.getPassword());
+		userDto.setImageName(savedUser.getImageName());
 		return userDto;
 
 	}
@@ -70,6 +72,7 @@ public class UserServiceImpl implements UserService {
 			userDto.setName(user.getName());
 			userDto.setEmail(user.getEmail());
 			userDto.setPassword(user.getPassword());
+			userDto.setImageName(user.getImageName());
 
 			dtoList.add(userDto);
 		}
@@ -101,6 +104,7 @@ public class UserServiceImpl implements UserService {
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
 		user.setPassword(userDto.getPassword());
+		user.setImageName(userDto.getImageName());
 		//save user to Database
 		User updatedUser=userRepository.save(user);
 		UserDto updatedDto = entityToDto(updatedUser);

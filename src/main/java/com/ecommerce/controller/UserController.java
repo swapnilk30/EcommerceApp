@@ -1,5 +1,6 @@
 package com.ecommerce.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ecommerce.dto.ApiResponseMessege;
+import com.ecommerce.dto.ImageResponse;
 import com.ecommerce.dto.UserDto;
 
 @RequestMapping("/users")
@@ -38,4 +41,9 @@ public interface UserController {
 	
 	@PatchMapping("/{userId}")  // PATCH   http://localhost:8085/users/3?password=kasldh
 	ResponseEntity<UserDto> changePassword(@PathVariable String userId,@RequestParam("password") String password);
+	
+	
+	//upload user image
+	@PostMapping("/image/{userId}")
+	ResponseEntity<ImageResponse> uploadUserImage(@RequestParam("userImage") MultipartFile image,@PathVariable String userId) throws IOException;
 }
