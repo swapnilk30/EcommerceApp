@@ -3,6 +3,8 @@ package com.ecommerce.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,7 +27,7 @@ public interface UserController {
 
 	
 	@PostMapping  // POST  http://localhost:8085/users
-	UserDto createUser(@RequestBody UserDto userDto);
+	UserDto createUser(@Valid @RequestBody UserDto userDto);
 	
 	@GetMapping // GET  http://localhost:8085/users
 	List<UserDto> getAllUser();
@@ -37,7 +39,7 @@ public interface UserController {
 	ResponseEntity<ApiResponseMessege> deleteUserById(@PathVariable String userId);
    
 	@PutMapping("/{userId}")   // UPDATE   http://localhost:8085/users/3
-	ResponseEntity<UserDto> updateUser(@PathVariable String userId,@RequestBody UserDto userDto);
+	ResponseEntity<UserDto> updateUser(@PathVariable String userId,@Valid @RequestBody UserDto userDto);
 	
 	@PatchMapping("/{userId}")  // PATCH   http://localhost:8085/users/3?password=kasldh
 	ResponseEntity<UserDto> changePassword(@PathVariable String userId,@RequestParam("password") String password);

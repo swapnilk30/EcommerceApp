@@ -70,6 +70,7 @@ public class CartServieImpl implements CartService {
 		}
 		// perform cart operation
 		// if cart item already present then update
+		//boolean upadeted = false; this is not working for that we use AtomicRefference
 		AtomicReference<Boolean> updated = new AtomicReference<>(false);
 		List<CartItem> items = cart.getItems();
 		List<CartItem> updatedItems = items.stream().map(item -> {
