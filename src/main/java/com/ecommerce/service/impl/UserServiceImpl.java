@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.dto.UserDto;
@@ -18,12 +19,18 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public UserDto createUser(UserDto userDto) {
 		// Generate random userId
 		String userId = UUID.randomUUID().toString();
 		userDto.setUserId(userId);
+		//encoding password 
+		userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
+		
 		// Convert UserDto to User Entity
 		User user = dtoToEntity(userDto);
 		User savedUser = userRepository.save(user);
